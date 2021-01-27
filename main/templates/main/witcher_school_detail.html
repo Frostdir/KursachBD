@@ -1,0 +1,50 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block title %}{{ witcher_school.name }}{% endblock %}
+
+{% block body %}
+    <h1 style="margin-left: 70px; margin-top: 1vw;">
+        {{ witcher_school.name }}
+    </h1>
+    <table class="table rounded border-0">
+        <tr><td class="border-0">
+            Место нахождения: {{ witcher_school.location }}
+        </td></tr>
+        <tr><td class="border-0">
+            Специализация: {{ witcher_school.specialization }}
+        </td></tr>
+
+        <tr><td class="border-0">
+            О Школе: {{ witcher_school.description.Text }}
+        </td></tr>
+    </table>
+
+    <h1 style="margin-left: 70px; margin-top: 1vw;">
+        Комментарии
+    </h1>
+
+    <table class="table rounded border-0">
+        {% for comment in witcher_school.description.comment_set.all %}
+        <tr>
+            <td class="border-right" width="25%" align="center">
+                <p>{{ comment.user.username }}</p>
+                <p>{{ comment.datetime }}</p>
+            </td>
+            <td class="border-0" width="70%">
+                {{ comment.comment }}
+            </td>
+            <td class="border-0" width="5%">
+                <span class="GoTo"><a href="{% url 'delete_comment' comment.id %}" style="color: black"><i class="fas fa-times"></i></a></span>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <form method="post">
+    {% csrf_token %}
+    {{ form.comment }}
+    <button class="btn btn-light" type="submit" style="margin-left: 10px;">Добавить</button>
+    </form>
+
+{% endblock %}

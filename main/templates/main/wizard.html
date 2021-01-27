@@ -1,0 +1,23 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block title %} Чародеи {% endblock %}
+
+{% block body %}
+    <h1>
+        Чародеи
+    </h1>
+    <table class="table rounded border-0" style="float: left">
+        {% for el in wizards %}
+            <tr>
+                <td width="58%" class="border-0">
+                    <span class="Title"><a href="{% url 'wizard_detail' el.id %}">{{el.personal.FIO}}</a></span>
+                </td>
+                <td class="border-0">
+                    <p>Кол-во просмотров: <span class="Views">{{el.description.Number}}</span></p>
+                    <p>Комментарии: <span class="Views">{{el.description.comment_set.count}}</span></p>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

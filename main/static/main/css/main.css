@@ -1,0 +1,89 @@
+body {
+    background: #2f353b; /* Цвет фона */
+    background-image: url(' ../img/logo2.jpg ');
+    background-size: auto;
+    background-repeat: repeat ;
+    background-position: 55% 20%;
+    background-attachment: scroll;
+    background-size: cover;
+
+}
+
+aside {
+    background-attachment: fixed;
+    float: top; /* Выравнивание по верху */
+    width: 100vw; /* Ширина блока в зависимости от размера экрана */
+    padding: 0.0%; /* Отступы по сторонам */
+    color: #fff; /* Цвет текста */
+    border: 1px solid #fff ;/* Границы блока по 5 пикселей толщиной, сплошные, белые */
+
+}
+
+/* Класс Logo в aside */
+aside .Logo {
+
+    font-size: 500%; /* Размер шрифта */
+    margin-left: 150px; /* Отступ слева */
+    margin-top: 100%; /* Отступ сверху */
+}
+
+aside table tr td h3 {
+    font-size: 150%;
+    height: 20px;
+}
+
+/* Панель навигации */
+aside table {
+    color: #fff;
+    /*width: 100vw;*/
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+aside a {
+    color: #fff
+}
+/* Выделение текста при наведении мышкой */
+aside table .GoTo, table a {
+    color: #f8e7e2;
+    text-decoration: none;
+}
+
+main .table {
+    table-layout: fixed;
+    word-wrap: break-word;
+    word-break: break-word;
+    border-collapse: collapse;
+    width: 70vw;
+    margin-top: 2vw;
+    margin-left: 5vw;
+    color: #CDD6DB;
+    background: rgba(205, 214, 219, 0.3);
+
+}
+
+main .table tr td .Title {
+    width: 70vw;
+    font-size: 40px;
+    font-family: "Monotype Corsiva";
+}
+
+main .table tr td .Title a {
+    color: gold;
+
+}
+
+main .table tr td .Content {
+    width: 70vw;
+    font-size: 17px;
+}
+
+main .table tr td .Content a {
+    color: black;
+}
+
+main h1 {
+    margin-left: 30vw;
+    margin-top: 1vw;
+    color: white;
+}

@@ -1,0 +1,23 @@
+{% extends "main/layout.html" %}
+{% load static %}
+
+{% block title %} Школы Ведьмаков {% endblock %}
+
+{% block body %}
+   <h1>
+        Школы Ведьмаков
+    </h1>
+    <table class="table rounded border-0" style="float: left">
+        {% for el in witcher_schools %}
+            <tr>
+                <td width="58%" class="border-0">
+                    <span class="Title"><a href="{% url 'witcher_school_detail' el.id %}">{{el.name}}</a></span>
+                </td>
+                <td class="border-0">
+                    <p>Кол-во просмотров: <span class="Views">{{el.description.Number}}</span></p>
+                    <p>Комментарии: <span class="Views">{{el.description.comment_set.count}}</span></p>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
